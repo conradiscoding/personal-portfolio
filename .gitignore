@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+https://github.com/machadop1407/react-tailwind-personal-portfolio
 
 # Editor directories and files
 .vscode/*
