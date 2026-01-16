@@ -1,4 +1,7 @@
+import { ArrowRight, Github, Linkedin } from 'lucide-react';
+import Button from '@/components/Button.jsx';
 import React from 'react';
+import AnimatedBorderButton from '@/components/AnimatedBorderButton.jsx';
 
 const Hero = () => {
   return (
@@ -17,6 +20,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, index) => (
           <div
+            key={index}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: '#20b2a6',
@@ -60,6 +64,30 @@ const Hero = () => {
               building efficient and scalable web applications. Let's create
               something amazing together.
             </p>
+          </div>
+          {/* CTAS  */}
+          <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+            <Button size="lg">
+              Contact Me <ArrowRight className="w-5 h-5" />
+            </Button>
+            <AnimatedBorderButton>Download CV</AnimatedBorderButton>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+            <span className="text-sm text-muted-foreground">Follow me: </span>
+            {[
+              { icon: Github, href: '#' },
+              { icon: Linkedin, href: '#' },
+            ].map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+              >
+                {<social.icon className="w-5 h-5" />}
+              </a>
+            ))}
           </div>
           {/* Right Column */}
         </div>
