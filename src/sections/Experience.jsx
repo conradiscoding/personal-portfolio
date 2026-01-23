@@ -107,7 +107,6 @@ const Experience = () => {
           </div>
         </div>
       </div>
-      Experience
     </section>
   );
 };
